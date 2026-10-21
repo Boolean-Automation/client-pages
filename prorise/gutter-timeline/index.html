@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ProRise Gutters: what the customer receives</title>
+<style>
+:root{--teal:#0b4f6c;--teal-soft:#e3eff4;--amber:#b26a00;--amber-soft:#fff1db;--green:#2e7d32;--green-soft:#e4f3e5;--ink:#1d2733;--muted:#5f6c79;--line:#d5e3ea;--card:#fff;--bg:#f4f7f9}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:linear-gradient(135deg,#0b4f6c,#12708f);color:#fff;padding:44px 20px 40px}
+header .wrap{max-width:920px;margin:0 auto}
+header h1{margin:0 0 8px;font-size:30px}
+header p{margin:0;opacity:.85;font-size:16px}
+.rail{position:sticky;top:0;z-index:5;background:rgba(244,247,249,.92);backdrop-filter:blur(6px);border-bottom:1px solid #e3e9ee}
+.rail .wrap{max-width:920px;margin:0 auto;display:flex;align-items:center;gap:0;padding:14px 20px;overflow-x:auto}
+.stop{display:flex;align-items:center;gap:8px;white-space:nowrap;cursor:pointer;border:0;background:none;padding:6px 8px;border-radius:20px;font:600 13px inherit;color:var(--muted)}
+.stop .dot{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;color:#fff;background:#b8c6d1}
+.stop.active{color:var(--ink);background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.stop.active .dot{background:var(--teal)}
+.stop.hold.active .dot{background:var(--amber)}
+.stop.done.active .dot{background:var(--green)}
+.seg{flex:1;min-width:18px;height:2px;background:var(--line)}
+main{max-width:920px;margin:28px auto 60px;padding:0 20px}
+.step{display:grid;grid-template-columns:48px 1fr;gap:18px;position:relative}
+.step:not(:last-child)::before{content:"";position:absolute;left:23px;top:48px;bottom:-6px;width:3px;background:var(--line)}
+.badge{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:18px;background:var(--teal);box-shadow:0 0 0 6px var(--bg);position:relative;z-index:1}
+.step.hold .badge{background:var(--amber)}
+.step.done .badge{background:var(--green)}
+.card{background:var(--card);border-radius:16px;box-shadow:0 2px 12px rgba(16,40,60,.07);padding:22px 24px;margin-bottom:28px;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 6px 22px rgba(16,40,60,.12)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font:700 11px/1 inherit;letter-spacing:.6px;padding:6px 10px;border-radius:12px;background:var(--teal-soft);color:var(--teal);text-transform:uppercase}
+.tag.ok{background:var(--green-soft);color:var(--green)}
+.tag.hold{background:var(--amber-soft);color:var(--amber)}
+.card h2{margin:0 0 6px;font-size:21px}
+.card p{margin:0 0 14px;color:var(--muted);line-height:1.55}
+.toggle{display:inline-flex;background:#eef2f5;border-radius:10px;padding:3px;margin-bottom:14px}
+.toggle button{border:0;background:none;padding:7px 12px;border-radius:8px;font:600 13px inherit;color:var(--muted);cursor:pointer}
+.toggle button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.shot{display:none}
+.shot.on{display:block}
+.shot img{display:block;max-width:min(100%,560px);border:1px solid #dfe5ea;border-radius:12px;cursor:zoom-in;transition:transform .2s}
+.shot img:hover{transform:scale(1.01)}
+.shot .cap{font-size:12px;color:#8a97a6;margin-top:8px}
+.shot img+img{margin-top:10px}
+.pending{border:2px dashed #c9d3dc;border-radius:12px;padding:36px;text-align:center;color:#8a97a6}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:34px}
+.sum{background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(16,40,60,.06)}
+.sum b{display:block;font-size:22px;margin-bottom:4px}
+.sum span{color:var(--muted);font-size:13px}
+.lightbox{position:fixed;inset:0;background:rgba(10,20,30,.86);display:none;align-items:center;justify-content:center;z-index:20;padding:24px;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+footer{text-align:center;color:#8a97a6;font-size:12px;padding:0 20px 40px}
+@media (max-width:600px){header h1{font-size:24px}.step{grid-template-columns:36px 1fr;gap:12px}.badge{width:36px;height:36px;font-size:15px}.step:not(:last-child)::before{left:17px;top:36px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>Gutter estimate: what the customer receives</h1>
+<p>From the moment an estimate is booked to the estimator arriving. Every screenshot is real, captured from a test New Gutters booking on October 21, 2026.</p>
+</div></header>
+
+<nav class="rail"><div class="wrap" id="rail"></div></nav>
+
+<main>
+<div class="summary">
+<div class="sum"><b>2 emails</b><span>Confirmation at booking, reminder 1 hour before</span></div>
+<div class="sum"><b>1 hour</b><span>Reminder email and text both go 1 hour before</span></div>
+<div class="sum"><b>1 tap</b><span>Customer saves the appointment to their own calendar</span></div>
+<div class="sum"><b>On hold</b><span>Reminder text, until text credits are added</span></div>
+</div>
+
+<section class="step" id="s1" data-label="Booked">
+<div class="badge">1</div>
+<div class="card">
+<div class="tags"><span class="tag">At booking</span><span class="tag ok">Sending</span></div>
+<h2>Confirmation email</h2>
+<p>Arrives right away. It confirms the estimator, the date and time, and his direct number, with add-to-calendar buttons and the gutter videos.</p>
+<div class="toggle"><button class="on" data-v="a">What the customer sees</button><button data-v="b">The YCBM setting</button></div>
+<div class="shot on" data-v="a"><img src="img/confirmation.png" alt="Confirmation email as received"><div class="cap">The confirmation email as it landed in the test customer's inbox.</div></div>
+<div class="shot" data-v="b"><img src="img/set-confirmation.png" alt="YCBM confirmation setting"><div class="cap">YouCanBook.me: "Confirmation email to Customer", sent immediately after booking.</div></div>
+</div>
+</section>
+
+<section class="step" id="s2" data-label="Calendar">
+<div class="badge">2</div>
+<div class="card">
+<div class="tags"><span class="tag">Right after booking</span><span class="tag ok">Ready</span></div>
+<h2>Customer calendar event</h2>
+<p>The buttons in the confirmation email (Add to Google, Add to Office 365, Download invite) save the appointment to the customer's own calendar in one tap. It is a separate event from the estimator's, titled "Your appointment with ProRise Gutters", with none of the estimator's notes.</p>
+<div class="toggle"><button class="on" data-v="a">What the customer sees</button><button data-v="b">The YCBM setting</button></div>
+<div class="shot on" data-v="a"><img src="img/calendar-event.png" alt="Customer calendar event"><div class="cap">The customer's event after tapping Add to Google: own title, nothing from the estimator's notes.</div></div>
+<div class="shot" data-v="b"><img src="img/set-calendar.png" alt="YCBM calendar setting"><div class="cap">YouCanBook.me: the estimator's event stays private, so customers use the add-to-calendar buttons.</div></div>
+</div>
+</section>
+
+<section class="step" id="s3" data-label="1 hr before">
+<div class="badge">3</div>
+<div class="card">
+<div class="tags"><span class="tag">1 hour before</span><span class="tag ok">Sending</span></div>
+<h2>Reminder email</h2>
+<p>Reminds them the estimate is today, that the estimator is on the way, and that the decision maker needs to be there.</p>
+<div class="toggle"><button class="on" data-v="a">What the customer sees</button><button data-v="b">The YCBM setting</button></div>
+<div class="shot on" data-v="a" id="reminder-shot"><div class="pending">Reminder email screenshot</div></div>
+<div class="shot" data-v="b"><img src="img/set-reminders.png" alt="YCBM reminder settings"><div class="cap">YouCanBook.me: reminder email and reminder text, both 1 hour before.</div></div>
+</div>
+</section>
+
+<section class="step hold" id="s4" data-label="Text">
+<div class="badge">4</div>
+<div class="card">
+<div class="tags"><span class="tag">1 hour before</span><span class="tag hold">On hold</span></div>
+<h2>Reminder text</h2>
+<p>Set up for 1 hour before. On hold until text credits are added. Credits are about 7 US cents a text plus tax, roughly $7 US a month at current volume.</p>
+<div class="toggle"><button class="on" data-v="a">Status</button><button data-v="b">Credit pricing</button></div>
+<div class="shot on" data-v="a"><img src="img/set-text-credits.png" alt="Text on hold"><div class="cap">YouCanBook.me: the reminder text is waiting on credits.</div></div>
+<div class="shot" data-v="b"><img src="img/set-credits-price.png" alt="Credit pricing"><div class="cap">YouCanBook.me: $0.07 per credit, 100 credits per pack.</div></div>
+</div>
+</section>
+
+<section class="step done" id="s5" data-label="Arrival">
+<div class="badge">&#10003;</div>
+<div class="card">
+<div class="tags"><span class="tag ok">Estimate time</span></div>
+<h2>Estimator arrives</h2>
+<p>Customers can cancel or reschedule themselves up to 1 hour before the estimate. Nothing goes out between the confirmation and the 1-hour reminder, so there is no day-before reminder today.</p>
+</div>
+</section>
+</main>
+
+<footer>Prepared by Boolean for ProRise Painting &amp; Gutters</footer>
+<div class="lightbox" id="lb"><img alt=""></div>
+
+<script>
+const steps=[...document.querySelectorAll('.step')], rail=document.getElementById('rail');
+steps.forEach((s,i)=>{
+  if(i) rail.insertAdjacentHTML('beforeend','<span class="seg"></span>');
+  const cls=s.classList.contains('hold')?'hold':s.classList.contains('done')?'done':'';
+  const b=document.createElement('button'); b.className='stop '+cls;
+  b.innerHTML='<span class="dot">'+s.querySelector('.badge').innerHTML+'</span>'+s.dataset.label;
+  b.onclick=()=>s.scrollIntoView({behavior:'smooth',block:'center'}); rail.appendChild(b); s._stop=b;
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){steps.forEach(x=>x._stop.classList.remove('active'));e.target._stop.classList.add('active')}}),{rootMargin:'-45% 0px -45% 0px'});
+steps.forEach(s=>io.observe(s)); steps[0]._stop.classList.add('active');
+document.querySelectorAll('.toggle').forEach(t=>t.addEventListener('click',e=>{
+  const v=e.target.dataset.v; if(!v) return; const card=t.closest('.card');
+  t.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  card.querySelectorAll('.shot').forEach(s=>s.classList.toggle('on',s.dataset.v===v));
+}));
+const lb=document.getElementById('lb');
+document.addEventListener('click',e=>{ if(e.target.matches('.shot img')){lb.querySelector('img').src=e.target.src;lb.classList.add('on')} else if(e.target.closest('#lb')) lb.classList.remove('on')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+</script>
+</body>
+</html>
