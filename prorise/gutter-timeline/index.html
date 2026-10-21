@@ -54,7 +54,28 @@ main{max-width:920px;margin:28px auto 60px;padding:0 20px}
 .lightbox.on{display:flex}
 .lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 footer{text-align:center;color:#8a97a6;font-size:12px;padding:0 20px 40px}
-@media (max-width:600px){header h1{font-size:24px}.step{grid-template-columns:36px 1fr;gap:12px}.badge{width:36px;height:36px;font-size:15px}.step:not(:last-child)::before{left:17px;top:36px}.card{padding:18px}}
+.zoomhint{display:none}
+@media (max-width:600px){
+header{padding:28px 16px 26px}header h1{font-size:22px}header p{font-size:14px}
+.rail .wrap{padding:10px 12px;justify-content:space-between}
+.stop{padding:4px;font-size:0;gap:0}.stop .dot{width:26px;height:26px;font-size:12px}
+.stop.active{font-size:12px;gap:6px;padding:4px 10px 4px 4px}
+.seg{min-width:6px}
+main{margin:16px auto 40px;padding:0 10px}
+.summary{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
+.sum{padding:12px}.sum b{font-size:18px}.sum span{font-size:12px}
+.step{display:block}.step::before{display:none}
+.badge{position:absolute;left:14px;top:16px;width:30px;height:30px;font-size:14px;box-shadow:none}
+.card{padding:16px 12px 14px;margin-bottom:16px}
+.tags{padding-left:40px;min-height:30px;align-items:center}
+.card h2{font-size:19px}.card p{font-size:15px}
+.toggle{display:flex}.toggle button{flex:1;padding:8px 6px}
+.shot img{max-width:100%;width:100%;border-radius:8px}
+.zoomhint{display:block;font-size:12px;color:#0b4f6c;font-weight:600;margin-top:6px}
+.lightbox{padding:0;overflow:auto;display:none;align-items:flex-start;justify-content:flex-start}
+.lightbox.on{display:block}
+.lightbox img{max-width:none;max-height:none;width:auto;border-radius:0}
+}
 </style>
 </head>
 <body>
@@ -80,8 +101,8 @@ footer{text-align:center;color:#8a97a6;font-size:12px;padding:0 20px 40px}
 <h2>Confirmation email</h2>
 <p>Arrives right away. It confirms the estimator, the date and time, and his direct number, with add-to-calendar buttons and the gutter videos.</p>
 <div class="toggle"><button class="on" data-v="a">What the customer sees</button><button data-v="b">The YCBM setting</button></div>
-<div class="shot on" data-v="a"><img src="img/confirmation.png" alt="Confirmation email as received"><div class="cap">The confirmation email as it landed in the test customer's inbox.</div></div>
-<div class="shot" data-v="b"><img src="img/set-confirmation.png" alt="YCBM confirmation setting"><div class="cap">YouCanBook.me: "Confirmation email to Customer", sent immediately after booking.</div></div>
+<div class="shot on" data-v="a"><img src="img/confirmation.png" alt="Confirmation email as received"><div class="zoomhint">Tap to zoom</div><div class="cap">The confirmation email as it landed in the test customer's inbox.</div></div>
+<div class="shot" data-v="b"><img src="img/set-confirmation.png" alt="YCBM confirmation setting"><div class="zoomhint">Tap to zoom</div><div class="cap">YouCanBook.me: "Confirmation email to Customer", sent immediately after booking.</div></div>
 </div>
 </section>
 
@@ -92,8 +113,8 @@ footer{text-align:center;color:#8a97a6;font-size:12px;padding:0 20px 40px}
 <h2>Customer calendar event</h2>
 <p>The buttons in the confirmation email (Add to Google, Add to Office 365, Download invite) save the appointment to the customer's own calendar in one tap. It is a separate event from the estimator's, titled "Your appointment with ProRise Gutters", with none of the estimator's notes.</p>
 <div class="toggle"><button class="on" data-v="a">What the customer sees</button><button data-v="b">The YCBM setting</button></div>
-<div class="shot on" data-v="a"><img src="img/calendar-event.png" alt="Customer calendar event"><div class="cap">The customer's event after tapping Add to Google: own title, nothing from the estimator's notes.</div></div>
-<div class="shot" data-v="b"><img src="img/set-calendar.png" alt="YCBM calendar setting"><div class="cap">YouCanBook.me: the estimator's event stays private, so customers use the add-to-calendar buttons.</div></div>
+<div class="shot on" data-v="a"><img src="img/calendar-event.png" alt="Customer calendar event"><div class="zoomhint">Tap to zoom</div><div class="cap">The customer's event after tapping Add to Google: own title, nothing from the estimator's notes.</div></div>
+<div class="shot" data-v="b"><img src="img/set-calendar.png" alt="YCBM calendar setting"><div class="zoomhint">Tap to zoom</div><div class="cap">YouCanBook.me: the estimator's event stays private, so customers use the add-to-calendar buttons.</div></div>
 </div>
 </section>
 
@@ -104,8 +125,8 @@ footer{text-align:center;color:#8a97a6;font-size:12px;padding:0 20px 40px}
 <h2>Reminder email</h2>
 <p>Reminds them the estimate is today, that the estimator is on the way, and that the decision maker needs to be there.</p>
 <div class="toggle"><button class="on" data-v="a">What the customer sees</button><button data-v="b">The YCBM setting</button></div>
-<div class="shot on" data-v="a" id="reminder-shot"><img src="img/reminder.png" alt="Reminder email as sent"><div class="cap">A real reminder from a New Gutters booking on October 20: sent at 2:30 PM for a 3:30 PM estimate. Customer name blacked out.</div></div>
-<div class="shot" data-v="b"><img src="img/set-reminders.png" alt="YCBM reminder settings"><div class="cap">YouCanBook.me: reminder email and reminder text, both 1 hour before.</div></div>
+<div class="shot on" data-v="a" id="reminder-shot"><img src="img/reminder.png" alt="Reminder email as sent"><div class="zoomhint">Tap to zoom</div><div class="cap">A real reminder from a New Gutters booking on October 20: sent at 2:30 PM for a 3:30 PM estimate. Customer name blacked out.</div></div>
+<div class="shot" data-v="b"><img src="img/set-reminders.png" alt="YCBM reminder settings"><div class="zoomhint">Tap to zoom</div><div class="cap">YouCanBook.me: reminder email and reminder text, both 1 hour before.</div></div>
 </div>
 </section>
 
@@ -116,8 +137,8 @@ footer{text-align:center;color:#8a97a6;font-size:12px;padding:0 20px 40px}
 <h2>Reminder text</h2>
 <p>Set up for 1 hour before. On hold until text credits are added. Credits are about 7 US cents a text plus tax, roughly $7 US a month at current volume.</p>
 <div class="toggle"><button class="on" data-v="a">Status</button><button data-v="b">Credit pricing</button></div>
-<div class="shot on" data-v="a"><img src="img/set-text-credits.png" alt="Text on hold"><div class="cap">YouCanBook.me: the reminder text is waiting on credits.</div></div>
-<div class="shot" data-v="b"><img src="img/set-credits-price.png" alt="Credit pricing"><div class="cap">YouCanBook.me: $0.07 per credit, 100 credits per pack.</div></div>
+<div class="shot on" data-v="a"><img src="img/set-text-credits.png" alt="Text on hold"><div class="zoomhint">Tap to zoom</div><div class="cap">YouCanBook.me: the reminder text is waiting on credits.</div></div>
+<div class="shot" data-v="b"><img src="img/set-credits-price.png" alt="Credit pricing"><div class="zoomhint">Tap to zoom</div><div class="cap">YouCanBook.me: $0.07 per credit, 100 credits per pack.</div></div>
 </div>
 </section>
 
